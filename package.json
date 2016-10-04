@@ -1,6 +1,6 @@
 {
   "name": "babel5-plugin-module-alias",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "description": "Babel (5) plugin to rewrite the path in require() and ES6 import",
   "repository": "hola/babel5-plugin-module-alias",

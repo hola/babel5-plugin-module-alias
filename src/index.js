@@ -26,6 +26,11 @@ function mapModule(context, module) {
 
     moduleSplit[0] = filesMap[moduleSplit[0]].src;
     var moduleMapped = path.relative(path.dirname(currentFile), path.normalize(moduleSplit.join('/')));
+    // Support npm modules instead of directories
+    if(moduleMapped.indexOf('npm:') !== -1) {
+        const [, npmModuleName] = moduleMapped.split('npm:');
+        return npmModuleName;
+    }
     if(moduleMapped[0] != '.') moduleMapped = './' + moduleMapped;
 
     return moduleMapped;

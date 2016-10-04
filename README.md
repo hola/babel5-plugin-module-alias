@@ -37,7 +37,7 @@ Then, the recommended way of using it is by using the file `.babelrc` to setup t
 }
 ```
 
-Module aliasing also works for a single modules. Given this config in `.babelrc`:
+Module aliasing also works for npm modules. Given this config in `.babelrc`:
 
 ```json
 {
@@ -47,8 +47,8 @@ Module aliasing also works for a single modules. Given this config in `.babelrc`
   "extra": {
     "module-alias": [
       {
-        "src": "../some-path/more-folders/my-awesome-lib",
-        "expose": "my-awesome-lib"
+        "src": "lodash",
+        "expose": "underscore"
       }
     ]
   }
@@ -58,10 +58,15 @@ Module aliasing also works for a single modules. Given this config in `.babelrc`
 In your code you can simply do:
 
 ```js
-import MyAwesomeLib from 'my-awesome-lib'; 
+import _ from 'underscore'; 
 ```
 
-_Note:_ the section `extra` is a custom section commonly used by plugins to take options. There's currently no better way in Babel to pass options to plugins.
+This also works with npm `@scoped` packages you want to unscope without
+changing your code, i.e.: `{ "src": "@myuser/module", "expose": "module"}`.`
+
+_Note:_ the section `extra` is a custom section commonly used by plugins to
+take options. There's currently no better way in Babel to pass options to
+plugins.
 
 ## License
 
