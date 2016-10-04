@@ -1,7 +1,12 @@
-# Module alias plugin for Babel
+# Module alias plugin for Babel 5
 
 A [babel](http://babeljs.io) plugin to easily map directories as different directories when your required a module.
 Useful when you don't want to write relative path yourself.
+
+This is a fork of
+[babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver)
+before it was changed, with the extra functionality of `npm:` aliasing working.
+It's a drop in replacement for `babel-plugin-module-alias` version 0.2.1.
 
 
 ## Usage
